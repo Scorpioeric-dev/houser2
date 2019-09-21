@@ -17,14 +17,7 @@ export default class Step3 extends Component {
     };
   }
 
-  componentDidMount() {
-    const reduxState = store.getState(
-      this.setState({
-        rentAmount: reduxState.rentAmount,
-        mortgage: reduxState.mortgage
-      })
-    );
-  }
+ 
   getHouses = () => {
     axios.get("/api/houses").then(res => {
       this.setState({
@@ -86,7 +79,7 @@ export default class Step3 extends Component {
           value={this.state.mortgage}
           onChange={e => this.handleChange(e)}
         />
-        <Link to="/step2">
+        <Link to="/Wizard/step2">
           <button onClick={this.goBack}>Back</button>
         </Link>
         <Link to="/">

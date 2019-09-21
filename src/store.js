@@ -35,7 +35,7 @@ function reducer(state = initialState, action) {
     case UPDATE_CITY:
       return { ...state, city: payload };
     case UPDATE_STATE:
-      return { ...state, city: payload };
+      return { ...state, state: payload };
     case UPDATE_ZIP:
       return { ...state, zip: payload };
     case UPDATE_IMG:
@@ -45,7 +45,7 @@ function reducer(state = initialState, action) {
     case UPDATE_MORTGAGE:
       return { ...state, mortgage: payload };
       case HANDLE_CHANGE:
-        return {...state, inputBox: payload}
+        return {...state, img: payload}
         case CANCEL:
           return {initialState}
       default:
@@ -54,4 +54,4 @@ function reducer(state = initialState, action) {
 }
 
 //export default store
-export default createStore(reducer);
+export default createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());

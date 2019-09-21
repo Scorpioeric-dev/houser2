@@ -15,6 +15,7 @@ module.exports = {
       rent_amount,
       mortgage
     } = req.body;
+    console.log(req.body)
     const db = req.app.get("db");
     let houses = await db.add_houses([
       name,

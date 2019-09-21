@@ -42,9 +42,9 @@ submit = () =>{
           <button onClick={this.submit}>Cancel</button>
         </Link>
         <Switch>
-          <Route path='/Step1' component={Step1}/>
-          <Route path='/Step2' component={Step2}/>
-          <Route path='/Step3' component={Step3}/>
+          <Route path='/Wizard/Step1' component={Step1}/>
+          <Route path='/Wizard/Step2' component={Step2}/>
+          <Route path='/Wizard/Step3' component={Step3}/>
         </Switch>
       </div>
     );

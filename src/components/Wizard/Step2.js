@@ -10,17 +10,10 @@ export default class Step2 extends Component {
       img: reduxState.img
     };
   }
-  componentDidMount() {
-    const reduxState = store.getState(
-      this.setState({
-        img: reduxState.img
-      })
-    );
-  }
+
   handleChange = e => {
-    store.dispatch({
-      type: HANDLE_CHANGE,
-      payload: e.target.value
+    this.setState({
+      [e.target.name]: e.target.value
     });
   };
 
@@ -38,16 +31,15 @@ export default class Step2 extends Component {
           placeholder="img"
           type="text"
           name="img"
-          value={this.state.img}
+          defaultValue={this.state.img}
           onChange={e => this.handleChange(e)}
         />
-        <Link to="/step3">
+        <Link to="/Wizard/step3">
           <button onClick={this.step2}>Next Step</button>
         </Link>
-        <Link to="/step1">
+        <Link to="/Wizard/step1">
           <button onClick={this.step2}>Back</button>
         </Link>
-        
       </div>
     );
   }
