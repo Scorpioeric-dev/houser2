@@ -6,13 +6,14 @@ import store, {
   CANCEL
 } from "../../store";
 import axios from "axios";
+import styled from 'styled-components'
 
 export default class Step3 extends Component {
   constructor() {
     super();
     const reduxState = store.getState();
     this.state = {
-      rentAmount: reduxState.rentAmount,
+      rent_amount: reduxState.rent_amount,
       mortgage: reduxState.mortgage
     };
   }
@@ -34,7 +35,7 @@ export default class Step3 extends Component {
   step3 = () => {
     store.dispatch({
       type: UPDATE_RENT_AMOUNT,
-      payload: this.state.rentAmount
+      payload: this.state.rent_amount
     });
     store.dispatch({
       type: UPDATE_MORTGAGE,
@@ -54,7 +55,7 @@ export default class Step3 extends Component {
   goBack = () => {
     store.dispatch({
       type: UPDATE_RENT_AMOUNT,
-      payload: this.state.rentAmount
+      payload: this.state.rent_amount
     });
     store.dispatch({
       type: UPDATE_MORTGAGE,
@@ -68,8 +69,8 @@ export default class Step3 extends Component {
         <input
           placeholder="rentAmount"
           type="text"
-          name="rentAmount"
-          value={this.state.rentAmount}
+          name= 'rentAmount'
+          value={this.state.rent_amount}
           onChange={e => this.handleChange(e)}
         />
         <input
@@ -80,12 +81,29 @@ export default class Step3 extends Component {
           onChange={e => this.handleChange(e)}
         />
         <Link to="/Wizard/step2">
-          <button onClick={this.goBack}>Back</button>
+        <Button onClick={this.goBack}>Back</Button>
         </Link>
         <Link to="/">
-          <button onClick={this.step3}>Complete</button>
+        <Button onClick={this.step3}>Complete</Button>
         </Link>
       </div>
     );
   }
 }
+const Back = styled.div`
+font-family:cursive;
+font-size:26px;
+color:black;
+`
+const Button = styled.div`
+  cursor: pointer;
+  border: solid white;
+  width: 8vw;
+  height: 4vh;
+  border-radius: 8px;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  margin-right: 30vw;
+  justify-content: space-between;
+`;

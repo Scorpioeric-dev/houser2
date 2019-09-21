@@ -5,10 +5,9 @@ import store, {
   UPDATE_ADDRESS,
   UPDATE_CITY,
   UPDATE_STATE,
-  UPDATE_ZIP,
-
+  UPDATE_ZIP
 } from "../../store";
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export default class Step1 extends Component {
   constructor() {
@@ -22,11 +21,11 @@ export default class Step1 extends Component {
       zip: reduxState.zip
     };
   }
-  
+
   handleChange = e => {
     this.setState({
-      [e.target.name]:e.target.value
-    })
+      [e.target.name]: e.target.value
+    });
   };
 
   step1 = () => {
@@ -55,56 +54,69 @@ export default class Step1 extends Component {
   render() {
     return (
       <div>
-        <Section>
-        <div>
-          <input
-            placeholder="name"
-            type="text"
-            name="name"
-            defaultValue={this.state.name}
-            onChange={e => this.handleChange(e)}
-          />
-          <input
-            placeholder="address"
-            type="text"
-            name="address"
-            defaultValue={this.state.address}
-            onChange={e => this.handleChange(e)}
-          />
-          
+        <section>
+          <div className="Container">
+            <input
+              placeholder="name"
+              type="text"
+              name="name"
+              defaultValue={this.state.name}
+              onChange={e => this.handleChange(e)}
+            />
+            <input
+              placeholder="address"
+              type="text"
+              name="address"
+              defaultValue={this.state.address}
+              onChange={e => this.handleChange(e)}
+            />
+            <input
+              placeholder="city"
+              type="text"
+              name="city"
+              defaultValue={this.state.city}
+              onChange={e => this.handleChange(e)}
+            />
+
+            <input
+              placeholder="state"
+              type="text"
+              name="state"
+              defaultValue={this.state.state}
+              onChange={e => this.handleChange(e)}
+            />
+            <input
+              placeholder="zip"
+              type="text"
+              name="zip"
+              defaultValue={this.state.zip}
+              onChange={e => this.handleChange(e)}
+            />
           </div>
-          <input
-          placeholder="city"
-          type="text"
-          name="city"
-          defaultValue={this.state.city}
-          onChange={e => this.handleChange(e)}
-          />
-          
-          <input
-          placeholder="state"
-          type="text"
-          name="state"
-          defaultValue={this.state.state}
-          onChange={e => this.handleChange(e)}
-          />
-          <input
-          placeholder="zip"
-          type="text"
-          name="zip"
-          defaultValue={this.state.zip}
-          onChange={e => this.handleChange(e)}
-          />
-        </Section>
+        </section>
         <Link to="/Wizard/step2">
-          <button onClick={() => this.step1()}>next Step</button>
+        <Button onClick={() => this.step1()}>next Step</Button>
         </Link>
       </div>
     );
   }
 }
-const Section = styled.div`
-border-radius:8px;
-color:white;
-margin:80px;
-`
+
+const Button = styled.div`
+  cursor: pointer;
+  border: solid white;
+  width: 8vw;
+  height: 4vh;
+  border-radius: 8px;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  margin-right: 30vw;
+  justify-content: space-between;
+`;
+const Next = styled.div`
+  font-family: cursive;
+  font-size: 26px;
+  color: black;
+  margin-right: 30vw;
+`;

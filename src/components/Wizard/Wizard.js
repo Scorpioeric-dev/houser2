@@ -4,6 +4,7 @@ import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
 import store,{CANCEL,HANDLE_CHANGE} from "../../store";
+import styled from 'styled-components'
 
 export default class Wizard extends Component {
   constructor() {
@@ -39,7 +40,10 @@ submit = () =>{
     return (
       <div>
         <Link to="/">
-          <button onClick={this.submit}>Cancel</button>
+        <Article>
+        Cancel{this.submit}
+        </Article>
+          
         </Link>
         <Switch>
           <Route path='/Wizard/Step1' component={Step1}/>
@@ -50,3 +54,21 @@ submit = () =>{
     );
   }
 }
+
+const Button = styled.div`
+
+cursor:pointer;
+border:solid white;
+width:5vw;
+height:4vh;
+border-radius:8px;
+background-color:black;
+color:white;`
+
+const Article = styled.div`
+font-family:cursive;
+font-size:26px;
+color:black;
+
+
+`

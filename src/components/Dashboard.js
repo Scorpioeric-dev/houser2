@@ -47,20 +47,18 @@ export default class Dashboard extends Component {
     }
     return (
       <div>
-        <Link to="/Wizard/step1">
-          <Button>Add Property</Button>
-        </Link>
+        
         {allData}
       </div>
     );
   }
 }
-const Button = styled.div`
-cursor:pointer;
-border:solid white;
-width:5vw;
-border-radius:8px;
-background-color:black;
-color:white;
-display:flex;
-margin-left:30vw;`
+// const Button = styled.div`
+// cursor:pointer;
+// border:solid white;
+// width:5vw;
+// border-radius:8px;
+// background-color:black;
+// color:white;
+// display:flex;
+// margin-left:30vw;`
