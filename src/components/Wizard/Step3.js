@@ -69,7 +69,7 @@ export default class Step3 extends Component {
         <input
           placeholder="rentAmount"
           type="text"
-          name= 'rentAmount'
+          name= 'rent_amount'
           value={this.state.rent_amount}
           onChange={e => this.handleChange(e)}
         />

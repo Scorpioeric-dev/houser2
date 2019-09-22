@@ -8,7 +8,7 @@ const initialState = {
   state: "",
   zip: "",
   img: "",
-  rentAmount: "",
+  rent_amount: "",
   mortgage: ""
 };
 
@@ -41,7 +41,7 @@ function reducer(state = initialState, action) {
     case UPDATE_IMG:
       return { ...state, img: payload };
     case UPDATE_RENT_AMOUNT:
-      return { ...state, rentAmount: payload };
+      return { ...state, rent_amount: payload };
     case UPDATE_MORTGAGE:
       return { ...state, mortgage: payload };
       case HANDLE_CHANGE:
